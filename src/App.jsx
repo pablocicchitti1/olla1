@@ -1272,8 +1272,8 @@ const MOBILE_STYLES = `
   * { -webkit-tap-highlight-color: transparent; }
   body { margin:0; overflow:hidden; }
   @media (max-width: 480px) {
-    .olla-outer { background:#fff !important; padding:0 !important; align-items:stretch !important; }
-    .olla-frame { max-width:100% !important; height:100vh !important; max-height:100vh !important; border-radius:0 !important; box-shadow:none !important; }
+    .olla-outer { background:#fff !important; padding:0 !important; align-items:flex-start !important; min-height:100dvh !important; }
+    .olla-frame { max-width:100% !important; width:100% !important; height:100dvh !important; max-height:100dvh !important; border-radius:0 !important; box-shadow:none !important; }
   }
 `;
 
@@ -1317,8 +1317,8 @@ export default function App() {
   const reset=()=>{ lsDel('olla_screen'); lsDel('olla_comedor'); lsDel('olla_ob'); window.location.reload(); };
 
   return (
-    <div className="olla-outer" style={{minHeight:"100vh",background:"#0A1628",display:"flex",alignItems:"center",justifyContent:"center",padding:"20px",fontFamily:"Plus Jakarta Sans, sans-serif"}}>
-      <div className="olla-frame" style={{width:"100%",maxWidth:390,height:"86vh",maxHeight:790,background:P.bg,borderRadius:46,overflow:"hidden",boxShadow:"0 40px 120px rgba(0,0,0,.7),inset 0 0 0 1px rgba(255,255,255,.05)",display:"flex",flexDirection:"column",position:"relative"}}>
+    <div className="olla-outer" style={{minHeight:"100dvh",height:"100dvh",background:"#0A1628",display:"flex",alignItems:"center",justifyContent:"center",padding:"20px",fontFamily:"Plus Jakarta Sans, sans-serif"}}>
+      <div className="olla-frame" style={{width:"100%",maxWidth:390,height:"calc(100dvh - 40px)",maxHeight:790,background:P.bg,borderRadius:46,overflow:"hidden",boxShadow:"0 40px 120px rgba(0,0,0,.7),inset 0 0 0 1px rgba(255,255,255,.05)",display:"flex",flexDirection:"column",position:"relative"}}>
 
         {/* Status bar */}
         <div style={{background:statusLight?P.navy:P.bg,padding:"11px 24px 7px",display:"flex",justifyContent:"space-between",alignItems:"center",flexShrink:0,transition:"background .3s ease",borderBottom:statusLight?"none":`1px solid ${P.border}`}}>
